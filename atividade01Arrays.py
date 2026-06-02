@@ -345,27 +345,55 @@
 
 # 1. Inicialização da Matriz 3x3 (Pre-alocação)
 # Criamos uma lista contendo 3 listas, cada uma com 3 posições
-matriz = [[0,0,0], [0,0,0], [0,0,0]]
-qtd_impares = 0
+# matriz = [[0,0,0], [0,0,0], [0,0,0]]
+# qtd_impares = 0
 
-# 2. Leitura dos dados usando laços aninhados
-for linha in range(3):
-    for coluna in range(3):
-        valor = int(input(f"Digite o valor para [{linha}][{coluna}]: "))
-        matriz[linha][coluna] = valor
+# # 2. Leitura dos dados usando laços aninhados
+# for linha in range(3):
+#     for coluna in range(3):
+#         valor = int(input(f"Digite o valor para [{linha}][{coluna}]: "))
+#         matriz[linha][coluna] = valor
         
-        # 3. Verificação de números ímpares
-        # Se o resto da divisão por 2 for diferente de zero, o número é ímpar
-        if valor % 2 != 0:
-            qtd_impares += 1
+#         # 3. Verificação de números ímpares
+#         # Se o resto da divisão por 2 for diferente de zero, o número é ímpar
+#         if valor % 2 != 0:
+#             qtd_impares += 1
 
-# 4. Saída formatada da Matriz
-print("Matriz:")
-for linha in range(3):
-    for coluna in range(3):
-        # O argumento end=" " mantém os números na mesma linha
-        print(matriz[linha][coluna], end=" ")
-    print() # Pula para a próxima linha após imprimir uma fileira completa
+# # 4. Saída formatada da Matriz
+# print("Matriz:")
+# for linha in range(3):
+#     for coluna in range(3):
+#         # O argumento end=" " mantém os números na mesma linha
+#         print(matriz[linha][coluna], end=" ")
+#     print() # Pula para a próxima linha após imprimir uma fileira completa
 
-# 5. Exibição da contagem final
-print(f"Quantidade de números ímpares: {qtd_impares}")
+# # 5. Exibição da contagem final
+# print(f"Quantidade de números ímpares: {qtd_impares}")
+
+#questão 11
+
+# 1. Leitura das dimensões da matriz
+m = int(input("Informe a quantidade de linhas (m): "))
+n = int(input("Informe a quantidade de colunas (n): "))
+
+# 2. Inicialização da matriz m x n (Pre-alocação)
+
+matriz = [None] * m
+for i in range(m):
+    matriz[i] = [None] * n
+
+# 3. Leitura e armazenamento dos valores inteiros
+for i in range(m):
+    for j in range(n):
+        matriz[i][j] = int(input(f"Valor para a posição [{i}][{j}]: "))
+
+# 4. Processamento: Exibição da matriz e soma de cada LINHA
+for i in range(m):
+    soma_linha = 0
+    # Percorre cada coluna da linha atual para imprimir e somar
+    for j in range(n):
+        print(matriz[i][j], end=" ")
+        soma_linha += matriz[i][j] # Acumula o valor manualmente (sem sum())
+    
+    # Imprime o sinal de igual e o resultado final daquela linha
+    print(f"= {soma_linha}")
