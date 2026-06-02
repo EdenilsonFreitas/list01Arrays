@@ -283,60 +283,89 @@
 #questão 09
 
 # 1. Entrada de dados
-texto = input("Digite o texto: ")
+# texto = input("Digite o texto: ")
 
-# 2. Limpeza manual de pontuação 
-texto_limpo = ""
-for char in texto:
-    if char != "." and char != ",":
-        texto_limpo += char
+# # 2. Limpeza manual de pontuação 
+# texto_limpo = ""
+# for char in texto:
+#     if char != "." and char != ",":
+#         texto_limpo += char
 
-# 3. Contagem de palavras para pre-alocação 
-qtd_palavras = 0
-if texto_limpo != "":
-    qtd_palavras = 1
-    for char in texto_limpo:
-        if char == " ":
-            qtd_palavras += 1
+# # 3. Contagem de palavras para pre-alocação 
+# qtd_palavras = 0
+# if texto_limpo != "":
+#     qtd_palavras = 1
+#     for char in texto_limpo:
+#         if char == " ":
+#             qtd_palavras += 1
 
-# 4. Criação da lista e separação manual das palavras
-palavras = [None] * qtd_palavras
-palavra_temp = ""
-posicao = 0
+# # 4. Criação da lista e separação manual das palavras
+# palavras = [None] * qtd_palavras
+# palavra_temp = ""
+# posicao = 0
 
-for i in range(len(texto_limpo)):
-    if texto_limpo[i] != " ":
-        palavra_temp += texto_limpo[i]
+# for i in range(len(texto_limpo)):
+#     if texto_limpo[i] != " ":
+#         palavra_temp += texto_limpo[i]
     
-    # Se encontrar espaço ou for o fim da string, armazena a palavra
-    if texto_limpo[i] == " " or i == len(texto_limpo) - 1:
-        if palavra_temp != "":
-            palavras[posicao] = palavra_temp
-            posicao += 1
-            palavra_temp = ""
+#     # Se encontrar espaço ou for o fim da string, armazena a palavra
+#     if texto_limpo[i] == " " or i == len(texto_limpo) - 1:
+#         if palavra_temp != "":
+#             palavras[posicao] = palavra_temp
+#             posicao += 1
+#             palavra_temp = ""
 
-# 5. Contagem de frequências e formatação da saída
-saida = ""
-for i in range(qtd_palavras):
-    # Verifica se a palavra já foi processada anteriormente para não repetir na saída
-    ja_processada = False
-    for k in range(i):
-        if palavras[k] == palavras[i]:
-            ja_processada = True
-            break
+# # 5. Contagem de frequências e formatação da saída
+# saida = ""
+# for i in range(qtd_palavras):
+#     # Verifica se a palavra já foi processada anteriormente para não repetir na saída
+#     ja_processada = False
+#     for k in range(i):
+#         if palavras[k] == palavras[i]:
+#             ja_processada = True
+#             break
     
-    if not ja_processada:
-        contagem = 0
-        # Conta quantas vezes a palavra atual aparece na lista inteira
-        for j in range(qtd_palavras):
-            if palavras[j] == palavras[i]:
-                contagem += 1
+#     if not ja_processada:
+#         contagem = 0
+#         # Conta quantas vezes a palavra atual aparece na lista inteira
+#         for j in range(qtd_palavras):
+#             if palavras[j] == palavras[i]:
+#                 contagem += 1
         
-        # Monta a string de saída conforme o exemplo: "palavra=X; "
-        if saida == "":
-            saida += f"{palavras[i]}={contagem}"
-        else:
-            saida += f"; {palavras[i]}={contagem}"
+#         # Monta a string de saída conforme o exemplo: "palavra=X; "
+#         if saida == "":
+#             saida += f"{palavras[i]}={contagem}"
+#         else:
+#             saida += f"; {palavras[i]}={contagem}"
 
-# 6. Exibição do resultado final
-print(saida)
+# # 6. Exibição do resultado final
+# print(saida)
+
+#questão 10
+
+# 1. Inicialização da Matriz 3x3 (Pre-alocação)
+# Criamos uma lista contendo 3 listas, cada uma com 3 posições
+matriz = [[0,0,0], [0,0,0], [0,0,0]]
+qtd_impares = 0
+
+# 2. Leitura dos dados usando laços aninhados
+for linha in range(3):
+    for coluna in range(3):
+        valor = int(input(f"Digite o valor para [{linha}][{coluna}]: "))
+        matriz[linha][coluna] = valor
+        
+        # 3. Verificação de números ímpares
+        # Se o resto da divisão por 2 for diferente de zero, o número é ímpar
+        if valor % 2 != 0:
+            qtd_impares += 1
+
+# 4. Saída formatada da Matriz
+print("Matriz:")
+for linha in range(3):
+    for coluna in range(3):
+        # O argumento end=" " mantém os números na mesma linha
+        print(matriz[linha][coluna], end=" ")
+    print() # Pula para a próxima linha após imprimir uma fileira completa
+
+# 5. Exibição da contagem final
+print(f"Quantidade de números ímpares: {qtd_impares}")
