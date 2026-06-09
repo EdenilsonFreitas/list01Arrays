@@ -525,4 +525,45 @@
 # # Exibição final conforme o formato solicitado
 # print(f"Menor valor: {menor} {pos_menor} Maior valor: {maior} {pos_maior}")
 
+#questão 16
+# Inicialização das matrizes 3x3 com zeros 
+matriz_a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+matriz_b = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+matriz_r = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
+# Leitura dos valores para a Matriz A
+for i in range(3):
+    for j in range(3):
+        matriz_a[i][j] = int(input(f"Valor para A[{i}][{j}]: "))
+
+# Leitura dos valores para a Matriz B
+for i in range(3):
+    for j in range(3):
+        matriz_b[i][j] = int(input(f"Valor para B[{i}][{j}]: "))
+
+# Cálculo do Produto Matricial (R = A x B)
+for i in range(3):
+    for j in range(3):
+        soma_produto = 0
+        for k in range(3):
+            soma_produto += matriz_a[i][k] * matriz_b[k][j]
+        matriz_r[i][j] = soma_produto
+
+# Exibição dos resultados
+print("\nMatriz A:")
+for i in range(3):
+    for j in range(3):
+        print(matriz_a[i][j], end=" ")
+    print()
+
+print("\nMatriz B:")
+for i in range(3):
+    for j in range(3):
+        print(matriz_b[i][j], end=" ")
+    print()
+
+print("\nMatriz Resultante:")
+for i in range(3):
+    for j in range(3):
+        print(matriz_r[i][j], end=" ")
+    print()
