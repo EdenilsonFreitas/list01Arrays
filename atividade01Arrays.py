@@ -525,45 +525,157 @@
 # # Exibição final conforme o formato solicitado
 # print(f"Menor valor: {menor} {pos_menor} Maior valor: {maior} {pos_maior}")
 
-#questão 16
-# Inicialização das matrizes 3x3 com zeros 
-matriz_a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-matriz_b = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-matriz_r = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# #questão 16
+# # Inicialização das matrizes 3x3 com zeros 
+# matriz_a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# matriz_b = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# matriz_r = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-# Leitura dos valores para a Matriz A
-for i in range(3):
-    for j in range(3):
-        matriz_a[i][j] = int(input(f"Valor para A[{i}][{j}]: "))
+# # Leitura dos valores para a Matriz A
+# for i in range(3):
+#     for j in range(3):
+#         matriz_a[i][j] = int(input(f"Valor para A[{i}][{j}]: "))
 
-# Leitura dos valores para a Matriz B
-for i in range(3):
-    for j in range(3):
-        matriz_b[i][j] = int(input(f"Valor para B[{i}][{j}]: "))
+# # Leitura dos valores para a Matriz B
+# for i in range(3):
+#     for j in range(3):
+#         matriz_b[i][j] = int(input(f"Valor para B[{i}][{j}]: "))
 
-# Cálculo do Produto Matricial (R = A x B)
-for i in range(3):
-    for j in range(3):
-        soma_produto = 0
-        for k in range(3):
-            soma_produto += matriz_a[i][k] * matriz_b[k][j]
-        matriz_r[i][j] = soma_produto
+# # Cálculo do Produto Matricial (R = A x B)
+# for i in range(3):
+#     for j in range(3):
+#         soma_produto = 0
+#         for k in range(3):
+#             soma_produto += matriz_a[i][k] * matriz_b[k][j]
+#         matriz_r[i][j] = soma_produto
 
-# Exibição dos resultados
-print("\nMatriz A:")
+# # Exibição dos resultados
+# print("\nMatriz A:")
+# for i in range(3):
+#     for j in range(3):
+#         print(matriz_a[i][j], end=" ")
+#     print()
+
+# print("\nMatriz B:")
+# for i in range(3):
+#     for j in range(3):
+#         print(matriz_b[i][j], end=" ")
+#     print()
+
+# print("\nMatriz Resultante:")
+# for i in range(3):
+#     for j in range(3):
+#         print(matriz_r[i][j], end=" ")
+#     print()
+
+#questao 17
+# # 1. Solicita as dimensões das duas matrizes
+# j = int(input("Informe as linhas da Matriz A: "))
+# k = int(input("Informe as colunas da Matriz A: "))
+# m = int(input("Informe as linhas da Matriz B: "))
+# n = int(input("Informe as colunas da Matriz B: "))
+
+# # 2. Inicializa as matrizes com zeros (sem usar .append)
+# matriz_a = [ [0] * k for _ in range(j)]
+# matriz_b = [ [0] * n for _ in range(m)]
+
+# # 3. Leitura dos valores da Matriz A
+# for i in range(j):
+#     for c in range(k):
+#         matriz_a[i][c] = int(input(f"Valor para A[{i}][{c}]: "))
+
+# # 4. Leitura dos valores da Matriz B
+# for i in range(m):
+#     for c in range(n):
+#         matriz_b[i][c] = int(input(f"Valor para B[{i}][{c}]: "))
+
+# # 5. Verifica se o produto matricial é possível (k deve ser igual a m)
+# if k == m:
+#     # Inicializa a matriz resultante (j x n)
+#     matriz_r = [ [0] * n for _ in range(j)]
+    
+#     # 6. Cálculo do produto matricial
+#     for i in range(j): # Percorre linhas de A
+#         for col in range(n): # Percorre colunas de B
+#             soma_prod = 0
+#             for x in range(k): # Realiza o somatório dos produtos
+#                 soma_prod += matriz_a[i][x] * matriz_b[x][col]
+#             matriz_r[i][col] = soma_prod
+
+#     # 7. Exibição dos resultados (Matrizes A, B e Resultante)
+#     print("\nMatriz A:")
+#     for i in range(j):
+#         for c in range(k):
+#             print(matriz_a[i][c], end=" ")
+#         print()
+
+#     print("\nMatriz B:")
+#     for i in range(m):
+#         for c in range(n):
+#             print(matriz_b[i][c], end=" ")
+#         print()
+
+#     print("\nMatriz Resultante:")
+#     for i in range(j):
+#         for c in range(n):
+#             print(matriz_r[i][c], end=" ")
+#         print()
+# else:
+#     # 8. Caso não seja possível realizar o produto
+#     print("\nImpossibilidade de realizar o produto matricial.")
+#     print("Matriz A:")
+#     for i in range(j):
+#         for c in range(k):
+#             print(matriz_a[i][c], end=" ")
+#         print()
+#     print("\nMatriz B:")
+#     for i in range(m):
+#         for c in range(n):
+#             print(matriz_b[i][c], end=" ")
+#         print()
+
+
+#Questao 18
+
+# 1. Inicializa a matriz 3x6 e uma cópia para preservar a original
+matriz = [[0.0] * 6 for _ in range(3)]
+original = [[0.0] * 6 for _ in range(3)]
+
+# 2. Leitura dos valores reais
 for i in range(3):
-    for j in range(3):
-        print(matriz_a[i][j], end=" ")
+    for j in range(6):
+        valor = float(input(f"Digite o valor para [{i}][{j}]: "))
+        matriz[i][j] = valor
+        original[i][j] = valor # Salva na cópia para exibir depois
+
+# 3. Soma dos elementos das colunas ímpares (1ª, 3ª e 5ª -> índices 0, 2, 4)
+soma_col_impares = 0
+for i in range(3):
+    for j in [1, 2]:
+        soma_col_impares += matriz[i][j]
+
+# 4. Média aritmética da segunda e quarta colunas (índices 1 e 3)
+soma_media = 0
+for i in range(3):
+    soma_media += matriz[i][3] + matriz[i][4]
+media = soma_media / 6 # 3 elementos em cada uma das 2 colunas = 6 elementos
+
+# 5. Substituir a sexta coluna (índice 5) pela soma das colunas 4 e 5 (índices 3 e 4)
+for i in range(3):
+    matriz[i][5] = matriz[i][4] + matriz[i][2]
+
+# 6. Exibição dos resultados e das matrizes
+print(f"\nSoma das colunas ímpares: {soma_col_impares}")
+print(f"Média da 2ª e 4ª colunas: {media:.2f}")
+
+print("\nMatriz Original:")
+for i in range(3):
+    for j in range(6):
+        print(original[i][j], end=" ")
     print()
 
-print("\nMatriz B:")
+print("\nMatriz Modificada:")
 for i in range(3):
-    for j in range(3):
-        print(matriz_b[i][j], end=" ")
-    print()
-
-print("\nMatriz Resultante:")
-for i in range(3):
-    for j in range(3):
-        print(matriz_r[i][j], end=" ")
+    for j in range(6):
+        print(matriz[i][j], end=" ")
     print()
