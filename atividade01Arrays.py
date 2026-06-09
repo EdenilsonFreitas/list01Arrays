@@ -373,27 +373,54 @@
 #questão 11
 
 # 1. Leitura das dimensões da matriz
-m = int(input("Informe a quantidade de linhas (m): "))
-n = int(input("Informe a quantidade de colunas (n): "))
+# m = int(input("Informe a quantidade de linhas (m): "))
+# n = int(input("Informe a quantidade de colunas (n): "))
 
-# 2. Inicialização da matriz m x n (Pre-alocação)
+# # 2. Inicialização da matriz m x n (Pre-alocação)
 
-matriz = [None] * m
-for i in range(m):
-    matriz[i] = [None] * n
+# matriz = [None] * m
+# for i in range(m):
+#     matriz[i] = [None] * n
 
-# 3. Leitura e armazenamento dos valores inteiros
+# # 3. Leitura e armazenamento dos valores inteiros
+# for i in range(m):
+#     for j in range(n):
+#         matriz[i][j] = int(input(f"Valor para a posição [{i}][{j}]: "))
+
+# # 4. Processamento: Exibição da matriz e soma de cada LINHA
+# for i in range(m):
+#     soma_linha = 0
+#     # Percorre cada coluna da linha atual para imprimir e somar
+#     for j in range(n):
+#         print(matriz[i][j], end=" ")
+#         soma_linha += matriz[i][j] # Acumula o valor manualmente (sem sum())
+    
+#     # Imprime o sinal de igual e o resultado final daquela linha
+#     print(f"= {soma_linha}")
+
+
+#Questão 12
+# Solicita as dimensões da matriz
+m = int(input("Informe a quantidade de linhas: "))
+n = int(input("Informe a quantidade de colunas: "))
+
+# Inicializa a matriz com zeros (m x n)
+matriz = [ [0] * n for _ in range(m) ]
+
+# Preenchimento da matriz com valores informados pelo usuário
 for i in range(m):
     for j in range(n):
-        matriz[i][j] = int(input(f"Valor para a posição [{i}][{j}]: "))
+        matriz[i][j] = int(input(f"Valor para [{i}][{j}]: "))
 
-# 4. Processamento: Exibição da matriz e soma de cada LINHA
+# Exibe os elementos da matriz em sequência (conforme os exemplos)
 for i in range(m):
-    soma_linha = 0
-    # Percorre cada coluna da linha atual para imprimir e somar
     for j in range(n):
         print(matriz[i][j], end=" ")
-        soma_linha += matriz[i][j] # Acumula o valor manualmente (sem sum())
-    
-    # Imprime o sinal de igual e o resultado final daquela linha
-    print(f"= {soma_linha}")
+
+# Cálculo e exibição da soma de cada coluna
+for j in range(n):
+    soma_coluna = 0
+    for i in range(m):
+        soma_coluna += matriz[i][j]
+    print(f"Coluna{j+1}: {soma_coluna}", end=" ")
+
