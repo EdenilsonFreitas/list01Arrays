@@ -400,27 +400,129 @@
 
 
 #Questão 12
-# Solicita as dimensões da matriz
-m = int(input("Informe a quantidade de linhas: "))
-n = int(input("Informe a quantidade de colunas: "))
+# # Solicita as dimensões da matriz
+# m = int(input("Informe a quantidade de linhas: "))
+# n = int(input("Informe a quantidade de colunas: "))
 
-# Inicializa a matriz com zeros (m x n)
-matriz = [ [0] * n for _ in range(m) ]
+# # Inicializa a matriz com zeros (m x n)
+# matriz = [ [0] * n for _ in range(m) ]
 
-# Preenchimento da matriz com valores informados pelo usuário
-for i in range(m):
-    for j in range(n):
-        matriz[i][j] = int(input(f"Valor para [{i}][{j}]: "))
+# # Preenchimento da matriz com valores informados pelo usuário
+# for i in range(m):
+#     for j in range(n):
+#         matriz[i][j] = int(input(f"Valor para [{i}][{j}]: "))
 
-# Exibe os elementos da matriz em sequência (conforme os exemplos)
-for i in range(m):
-    for j in range(n):
-        print(matriz[i][j], end=" ")
+# # Exibe os elementos da matriz em sequência (conforme os exemplos)
+# for i in range(m):
+#     for j in range(n):
+#         print(matriz[i][j], end=" ")
 
-# Cálculo e exibição da soma de cada coluna
-for j in range(n):
-    soma_coluna = 0
-    for i in range(m):
-        soma_coluna += matriz[i][j]
-    print(f"Coluna{j+1}: {soma_coluna}", end=" ")
+# # Cálculo e exibição da soma de cada coluna
+# for j in range(n):
+#     soma_coluna = 0
+#     for i in range(m):
+#         soma_coluna += matriz[i][j]
+#     print(f"Coluna{j+1}: {soma_coluna}", end=" ")
+
+#questao 13
+
+# Inicialização das matrizes 3x3 com zeros 
+# matriz_a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# matriz_b = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# matriz_c = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+# # Leitura dos valores para a Matriz A
+# for i in range(3):
+#     for j in range(3):
+#         matriz_a[i][j] = int(input(f"Digite valor para A[{i}][{j}]: "))
+
+# # Leitura dos valores para a Matriz B
+# for i in range(3):
+#     for j in range(3):
+#         matriz_b[i][j] = int(input(f"Digite valor para B[{i}][{j}]: "))
+
+# # Comparação e preenchimento da Matriz C com os maiores valores
+# for i in range(3):
+#     for j in range(3):
+#         if matriz_a[i][j] > matriz_b[i][j]:
+#             matriz_c[i][j] = matriz_a[i][j]
+#         else:
+#             matriz_c[i][j] = matriz_b[i][j]
+
+# # Exibição da Matriz C resultante
+# for i in range(3):
+#     for j in range(3):
+#         print(matriz_c[i][j], end=" ")
+
+
+#questão 14
+# Inicializa a matriz 4x4 com zeros 
+# matriz = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+
+# # Preenchimento da matriz com entradas do usuário
+# for i in range(4):
+#     for j in range(4):
+#         matriz[i][j] = int(input(f"Valor para [{i}][{j}]: "))
+
+# soma = 0
+# termos = "" # Para armazenar a exibição "6 + 8 + 14 + 16"
+
+# # Processamento da soma conforme os índices do exemplo
+# for i in range(4):
+#     for j in range(4):
+#         # Verifica se o índice da linha e da coluna são ímpares (1 ou 3)
+#         if i % 2 != 0 and j % 2 != 0:
+#             valor = matriz[i][j]
+#             soma += valor
+#             # Lógica para construir a string de saída
+#             if termos == "":
+#                 termos = str(valor)
+#             else:
+#                 termos += " + " + str(valor)
+
+# # Exibe o resultado final formatado
+# print(f"Resultado: {termos} = {soma}")
+
+#questão 15
+
+# # Solicita as dimensões da matriz
+# m = int(input("Informe a quantidade de linhas (2 a 10): "))
+# n = int(input("Informe a quantidade de colunas (2 a 10): "))
+
+# # Inicializa a matriz pré-alocada com zeros 
+# matriz = [[0] * n for _ in range(m)]
+
+# # Preenchimento da matriz com valores informados pelo usuário
+# for i in range(m):
+#     for j in range(n):
+#         matriz[i][j] = int(input(f"Digite o valor para [{i}][{j}]: "))
+
+# # Exibição da matriz completa em uma única linha 
+# for i in range(m):
+#     for j in range(n):
+#         print(matriz[i][j], end=" ")
+# print()  # Quebra de linha após exibir a matriz
+
+# # Lógica manual para encontrar o maior, o menor e suas posições
+# # CORREÇÃO: inicializa com o primeiro elemento da matriz
+# maior = matriz[0][0]
+# menor = matriz[0][0]
+# pos_maior = (0, 0)
+# pos_menor = (0, 0)
+
+# for i in range(m):
+#     for j in range(n):
+#         # Comparação manual para o maior valor
+#         if matriz[i][j] > maior:
+#             maior = matriz[i][j]
+#             pos_maior = (i, j)
+        
+#         # Comparação manual para o menor valor
+#         if matriz[i][j] < menor:
+#             menor = matriz[i][j]
+#             pos_menor = (i, j)
+
+# # Exibição final conforme o formato solicitado
+# print(f"Menor valor: {menor} {pos_menor} Maior valor: {maior} {pos_maior}")
+
 
