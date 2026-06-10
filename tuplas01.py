@@ -1,13 +1,11 @@
 #Questao 01
-quantidade = int(input("Quantos números deseja informar? "))
+tupla = ()
 
-lista = []
+quantidade = int(input("Quantos números deseja informar? "))
 
 for i in range(quantidade):
     numero = int(input("Digite um número: "))
-    lista.append(numero)
-
-tupla = tuple(lista)
+    tupla += (numero,)
 
 pares = ()
 
