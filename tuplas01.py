@@ -15,3 +15,160 @@ for numero in tupla:
 
 print("Tupla original:", tupla)
 print("Tupla com os pares:", pares)
+
+"""
+Escreva um programa que receba uma tupla de strings e exiba uma nova
+tupla com as strings ordenadas alfabeticamente e sem repetições. Por
+exemplo, se a tupla for ("banana", "maçã", "laranja", "banana", "uva"), o
+programa deve imprimir ("banana", "laranja", "maçã", "uva").
+"""
+
+tupla_strings = ()
+quantidade_strings = int(input("Quantas strings deseja informar? "))
+
+for i in range(quantidade_strings):
+    string = input("Digite uma string: ")
+    tupla_strings += (string,)
+
+tupla_unica = set(tupla_strings)
+tupla_ordenada = tuple(sorted(tupla_unica))
+
+print("Tupla original:", tupla_strings)
+print("Tupla ordenada e sem repetições:", tupla_ordenada)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
