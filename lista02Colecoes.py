@@ -180,34 +180,75 @@
 # print(f"Conj 1: {conj1} Conj 2: {conj2}")
 
 #Questão 09
-# 1. Entrada de dados para o conjunto A
-entrada_a = input("Digite os elementos de A (separados por espaço): ").split()
-A = set()
-for x in entrada_a:
-    # Tenta converter para inteiro, se falhar mantém como string para aceitar letras
-    if x.isdigit():
-        A.add(int(x))
+# # 1. Entrada de dados para o conjunto A
+# entrada_a = input("Digite os elementos de A (separados por espaço): ").split()
+# A = set()
+# for x in entrada_a:
+#     # Tenta converter para inteiro, se falhar mantém como string para aceitar letras
+#     if x.isdigit():
+#         A.add(int(x))
+#     else:
+#         A.add(x)
+
+# # 2. Entrada de dados para o conjunto B
+# entrada_b = input("Digite os elementos de B (separados por espaço): ").split()
+# B = set()
+# for x in entrada_b:
+#     if x.isdigit():
+#         B.add(int(x))
+#     else:
+#         B.add(x)
+
+# # 3. Verifica se B é subconjunto de A
+# if B.issubset(A):
+#     status = "B é subconjunto de A"
+# else:
+#     status = "B não é subconjunto de A"
+
+# # 4. Cria o conjunto C com a diferença (A - B)
+# C = A.difference(B)
+
+# # 5. Exibição do resultado final conforme o formato do exemplo
+# print(f"{status} A: {A} B: {B} C: {C}")
+
+#Questão 10
+# 1. Inicializa um conjunto vazio
+conjunto = set()
+
+# 2. Loop para preencher o conjunto até encontrar '$$'
+while True:
+    valor = input("Digite um valor para o conjunto (ou '$$' para parar): ")
+    if valor == '$$':
+        break
+    # Adiciona ao conjunto usando o operador | conforme exigido
+    conjunto = conjunto | {int(valor)}
+
+# 3. Inicializa uma lista vazia para os valores de verificação
+lista_verificacao = []
+
+# 4. Loop para preencher a lista até encontrar '$$'
+while True:
+    valor = input("Digite um valor para a lista (ou '$$' para parar): ")
+    if valor == '$$':
+        break
+    # Adiciona à lista via concatenação (evitando .append)
+    lista_verificacao += [int(valor)]
+
+# 5. Processamento dos resultados da lista
+resultado_lista = ""
+for i in range(len(lista_verificacao)):
+    item = lista_verificacao[i]
+    presenca = "Sim" if item in conjunto else "Não"
+    
+    # Formata a string de saída com vírgulas entre os itens
+    if resultado_lista == "":
+        resultado_lista = f"{item}:{presenca}"
     else:
-        A.add(x)
+        resultado_lista += f", {item}:{presenca}"
 
-# 2. Entrada de dados para o conjunto B
-entrada_b = input("Digite os elementos de B (separados por espaço): ").split()
-B = set()
-for x in entrada_b:
-    if x.isdigit():
-        B.add(int(x))
-    else:
-        B.add(x)
+# 6. Exibição final conforme o formato do exemplo
+print(f"Conjunto: {conjunto}")
+print(f"Lista: {resultado_lista}")
 
-# 3. Verifica se B é subconjunto de A
-if B.issubset(A):
-    status = "B é subconjunto de A"
-else:
-    status = "B não é subconjunto de A"
 
-# 4. Cria o conjunto C com a diferença (A - B)
-C = A.difference(B)
-
-# 5. Exibição do resultado final conforme o formato do exemplo
-print(f"{status} A: {A} B: {B} C: {C}")
 
