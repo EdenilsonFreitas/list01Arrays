@@ -57,3 +57,103 @@
 
 #Questão 04
 
+
+# lista = [1,2,3,4,5]
+
+# tupla_original = tuple(lista)
+
+# #  Criamos uma nova tupla com o slice dos três primeiros elementos (índices 0, 1 e 2)
+# tupla_slice = tupla_original[:3]
+
+# print(f"Lista original: {lista}")
+# print(f"Tupla: {tupla_original}")
+# print(f"Slice da tupla: {tupla_slice}")
+
+# Questão 05
+
+# tupla_a = (1, 2, 3, 4, 5)
+
+# pos1 = int(input("Posição 1: "))
+# pos2 = int(input("Posição 2: "))
+
+# lista_auxiliar = list(tupla_a)
+
+# aux = lista_auxiliar[pos1]
+# lista_auxiliar[pos1] = lista_auxiliar[pos2]
+# lista_auxiliar[pos2] = aux
+
+# tupla_b = tuple(lista_auxiliar)
+
+# print(f"Tupla A: {tupla_a}")
+# print(f"Tupla B: {tupla_b}")
+
+#Questao 06
+
+# entrada = input("Digite os números separados por espaço: ")
+# lista = list(map(int, entrada.split()))
+
+# conjunto = set(lista)
+
+# maior = max(conjunto)
+
+# conjunto.add(maior * 2)
+
+# print(f"Lista: {lista}")
+# print(f"Conj: {conjunto}")
+
+# Questao 07
+
+# Leitura dos conjuntos A, B e C
+# print("Digite os elementos separados por vírgula (ex: 1,2,3,4)")
+
+# # Conjunto A
+# entrada = input("A: ")
+# A = set()
+# numero = ""
+# for caractere in entrada:
+#     if caractere != "," and caractere != " ":
+#         numero = numero + caractere
+#     elif numero != "":
+#         A = A | {int(numero)}
+#         numero = ""
+# if numero != "":
+#     A = A | {int(numero)}
+
+# # Conjunto B
+# entrada = input("B: ")
+# B = set()
+# numero = ""
+# for caractere in entrada:
+#     if caractere != "," and caractere != " ":
+#         numero = numero + caractere
+#     elif numero != "":
+#         B = B | {int(numero)}
+#         numero = ""
+# if numero != "":
+#     B = B | {int(numero)}
+
+# # Conjunto C
+# entrada = input("C: ")
+# C = set()
+# numero = ""
+# for caractere in entrada:
+#     if caractere != "," and caractere != " ":
+#         numero = numero + caractere
+#     elif numero != "":
+#         C = C | {int(numero)}
+#         numero = ""
+# if numero != "":
+#     C = C | {int(numero)}
+
+# # União: A ∪ B (usando operador |)
+# uniao_AB = A | B
+
+# # Diferença: (A ∪ B) - C (usando operador -)
+# diferenca = uniao_AB - C
+
+# # Exibe os resultados
+# print(f"União: {uniao_AB}")
+# print(f"Diferença: {diferenca}")
+
+
+
