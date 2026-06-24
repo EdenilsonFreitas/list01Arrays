@@ -156,4 +156,58 @@
 # print(f"Diferença: {diferenca}")
 
 
+#Questão 08
+# # 1. Solicita a sequência de valores (ex: 1, 9, 3, 2, 3, 6, 4)
+# entrada = input("Valores: ")
+
+# # 2. Solicita o divisor
+# divisor = int(input("Divisor: "))
+
+# # 3. Cria o primeiro conjunto (Conj 1)
+# # O split(',') separa a string pelas vírgulas conforme o exemplo da fonte
+# elementos = entrada.split(',')
+# conj1 = set()
+# for x in elementos:
+#     conj1.add(int(x))
+
+# # 4. Cria o segundo conjunto (Conj 2) com a regra de divisibilidade
+# conj2 = set()
+# for num in conj1:
+#     if num % divisor == 0:
+#         conj2.add(num)
+
+# # 5. Exibe os resultados conforme o formato solicitado
+# print(f"Conj 1: {conj1} Conj 2: {conj2}")
+
+#Questão 09
+# 1. Entrada de dados para o conjunto A
+entrada_a = input("Digite os elementos de A (separados por espaço): ").split()
+A = set()
+for x in entrada_a:
+    # Tenta converter para inteiro, se falhar mantém como string para aceitar letras
+    if x.isdigit():
+        A.add(int(x))
+    else:
+        A.add(x)
+
+# 2. Entrada de dados para o conjunto B
+entrada_b = input("Digite os elementos de B (separados por espaço): ").split()
+B = set()
+for x in entrada_b:
+    if x.isdigit():
+        B.add(int(x))
+    else:
+        B.add(x)
+
+# 3. Verifica se B é subconjunto de A
+if B.issubset(A):
+    status = "B é subconjunto de A"
+else:
+    status = "B não é subconjunto de A"
+
+# 4. Cria o conjunto C com a diferença (A - B)
+C = A.difference(B)
+
+# 5. Exibição do resultado final conforme o formato do exemplo
+print(f"{status} A: {A} B: {B} C: {C}")
 
