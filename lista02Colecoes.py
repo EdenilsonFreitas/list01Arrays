@@ -213,42 +213,71 @@
 
 #Questão 10
 # 1. Inicializa um conjunto vazio
-conjunto = set()
+# conjunto = set()
 
-# 2. Loop para preencher o conjunto até encontrar '$$'
-while True:
-    valor = input("Digite um valor para o conjunto (ou '$$' para parar): ")
-    if valor == '$$':
-        break
-    # Adiciona ao conjunto usando o operador | conforme exigido
-    conjunto = conjunto | {int(valor)}
+# # 2. Loop para preencher o conjunto até encontrar '$$'
+# while True:
+#     valor = input("Digite um valor para o conjunto (ou '$$' para parar): ")
+#     if valor == '$$':
+#         break
+#     # Adiciona ao conjunto usando o operador | conforme exigido
+#     conjunto = conjunto | {int(valor)}
 
-# 3. Inicializa uma lista vazia para os valores de verificação
-lista_verificacao = []
+# # 3. Inicializa uma lista vazia para os valores de verificação
+# lista_verificacao = []
 
-# 4. Loop para preencher a lista até encontrar '$$'
-while True:
-    valor = input("Digite um valor para a lista (ou '$$' para parar): ")
-    if valor == '$$':
-        break
-    # Adiciona à lista via concatenação (evitando .append)
-    lista_verificacao += [int(valor)]
+# # 4. Loop para preencher a lista até encontrar '$$'
+# while True:
+#     valor = input("Digite um valor para a lista (ou '$$' para parar): ")
+#     if valor == '$$':
+#         break
+#     # Adiciona à lista via concatenação (evitando .append)
+#     lista_verificacao += [int(valor)]
 
-# 5. Processamento dos resultados da lista
-resultado_lista = ""
-for i in range(len(lista_verificacao)):
-    item = lista_verificacao[i]
-    presenca = "Sim" if item in conjunto else "Não"
+# # 5. Processamento dos resultados da lista
+# resultado_lista = ""
+# for i in range(len(lista_verificacao)):
+#     item = lista_verificacao[i]
+#     presenca = "Sim" if item in conjunto else "Não"
     
-    # Formata a string de saída com vírgulas entre os itens
-    if resultado_lista == "":
-        resultado_lista = f"{item}:{presenca}"
+#     # Formata a string de saída com vírgulas entre os itens
+#     if resultado_lista == "":
+#         resultado_lista = f"{item}:{presenca}"
+#     else:
+#         resultado_lista += f", {item}:{presenca}"
+
+# # 6. Exibição final conforme o formato do exemplo
+# print(f"Conjunto: {conjunto}")
+# print(f"Lista: {resultado_lista}")
+
+#Questao 11
+
+# 1. Recebe a string de entrada do usuário
+texto = input("Digite o texto: ")
+
+# 2. Remove pontuação (ponto e vírgula) manualmente
+texto_limpo = ""
+for char in texto:
+    if char != "." and char != ",":
+        texto_limpo += char
+
+# 3. Converte para minúsculas para garantir a insensibilidade a maiúsculas
+texto_minusculo = texto_limpo.lower()
+
+# 4. Divide o texto em uma lista de palavras
+palavras = texto_minusculo.split()
+
+# 5. Criação do dicionário de contagem
+contagem = {}
+
+# 6. Percorre as palavras e atualiza as ocorrências no dicionário
+for p in palavras:
+    if p in contagem:
+        contagem[p] += 1
     else:
-        resultado_lista += f", {item}:{presenca}"
+        contagem[p] = 1
 
-# 6. Exibição final conforme o formato do exemplo
-print(f"Conjunto: {conjunto}")
-print(f"Lista: {resultado_lista}")
-
+# 7. Exibição do resultado final formatado
+print(f"Contagem de palavras: {contagem}")
 
 
