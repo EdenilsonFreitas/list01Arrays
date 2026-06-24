@@ -121,7 +121,6 @@ print(f"lista1 = {lista1}    lista2 = {lista2}    lista3 = {lista3}")
 
 
 #questão 05
-#Leitura da quantidade
 n = int(input("Digite a quantidade de elementos: "))
 vetor = [0] * n
 
@@ -344,7 +343,6 @@ print(saida)
 #questão 10
 
 # 1. Inicialização da Matriz 3x3 (Pre-alocação)
-# Criamos uma lista contendo 3 listas, cada uma com 3 posições
 matriz = [[0,0,0], [0,0,0], [0,0,0]]
 qtd_impares = 0
 
@@ -401,7 +399,7 @@ for i in range(m):
 
 #Questão 12
 
-# # Solicita as dimensões da matriz
+# # Solicita as dimensões 
 m = int(input("Informe a quantidade de linhas: "))
 n = int(input("Informe a quantidade de colunas: "))
 
@@ -528,7 +526,7 @@ print(f"Menor valor: {menor} {pos_menor} Maior valor: {maior} {pos_maior}")
 
 # #questão 16
 
-# # Inicialização das matrizes 3x3 com zeros 
+# # Inicialização das matrizes 3x3 c
 matriz_a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 matriz_b = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 matriz_r = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
