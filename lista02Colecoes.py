@@ -297,3 +297,21 @@ for item, quantidade in loja2.items():
 print(f"Loja 1: {loja1}")
 print(f"Loja 2: {loja2}")
 print(f"Estoque: {estoque_total}")
+
+#Questao 15
+vendas = {}
+
+quantidade = int(input("Quantidade de vendedores: "))
+
+for i in range(quantidade):
+    nome = input("Nome do vendedor: ")
+
+    total = 0
+    for mes in range(1, 4):
+        total += float(input(f"Venda do mês {mes}: "))
+
+    vendas[nome] = total
+
+print("\nRelatório de vendas")
+for nome in vendas:
+    print(nome, "->", vendas[nome])
